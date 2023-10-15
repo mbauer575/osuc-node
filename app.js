@@ -17,7 +17,9 @@ app.set('view engine', 'ejs')
 app.get('', (req, res) => {
     res.render('index', { text: 'This is EJS' })
 })
-
+app.get('/index', (req, res) => {
+    res.render('index', { text: 'This is EJS' })
+})
 app.get('/test1', (req, res) => {
     res.render('test1', { text: 'This is EJS' })
 })
