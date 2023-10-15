@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
-
-
-
+var plotly = require('plotly')("bauermax", "lXZoc2z08IzBj9V0G6S8")
 const PORT = 8080
+
+
 
 
 app.use(express.static('public'))
@@ -25,6 +25,7 @@ app.get('/test1', (req, res) => {
 })
 
 
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
 
-
-app.listen(PORT, () => console.info(`Server has started on ${PORT}`))
