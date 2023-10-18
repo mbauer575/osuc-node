@@ -1,10 +1,13 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import MainLayout from '../layout/MainLayout'
+
+
 function secondFloor() {
   return (
     <div>
-        <Navbar />
-        <h1>2nd Floor</h1>
+      <MainLayout>
+        <div>Second Floor</div>
+      </MainLayout>
     </div>
   )
 }

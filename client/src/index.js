@@ -4,6 +4,8 @@ import './styles/index.css';
 import App from './App';
 import FirstFloor from './Pages/firstFloor';
 import SecondFloor from './Pages/secondFloor';
+import ThirdFloor from './Pages/thirdFloor';
+import FourthFloor from './Pages/fourthFloor';
 
 import {
   createBrowserRouter,
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/secondfloor",
     element: <SecondFloor />,
+  },
+  {
+    path: "/thirdfloor",
+    element: <ThirdFloor />,
+  },
+  {
+    path: "/fourthfloor",
+    element: <FourthFloor />,
   },
 ]);
 

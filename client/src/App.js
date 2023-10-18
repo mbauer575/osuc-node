@@ -1,12 +1,11 @@
 import './styles/app.css';
-import HelloWorld from './components/HelloWorld'
-import Navbar from './components/Navbar';
+import MainLayout from './layout/MainLayout';
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <HelloWorld />
-      <div className="samplecss">Hello app CSS</div>
+      <MainLayout>
+        <h3>home</h3>
+      </MainLayout>
     </div>
   );
 }
