@@ -1,13 +1,11 @@
 const path = require('path');
 const express = require('express')
 const app = express()
-var plotly = require('plotly')("bauermax", "lXZoc2z08IzBj9V0G6S8")
 const PORT = 3001
 
 
-
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
