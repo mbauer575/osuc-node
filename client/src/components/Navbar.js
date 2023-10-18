@@ -1,4 +1,6 @@
+import '../styles/navbar.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
@@ -7,11 +9,11 @@ function Navbar() {
                 Logo
             </div>
             <ul className="navbar-menu">
-                <li>Home</li>
-                <li>1st Floor</li>
-                <li>2nd Floor</li>
-                <li>3rd Floor</li>
-                <li>4th Floor</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/firstFloor">1st Floor</Link></li>
+                <li><Link to="/secondFloor">2nd Floor</Link></li>
+                <li><Link to="/thirdFloor">3rd Floor</Link></li>
+                <li><Link to="/fourthFloor">4th Floor</Link></li>
             </ul>
 
         </div>
