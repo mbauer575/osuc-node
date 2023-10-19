@@ -1,12 +1,9 @@
 import React from 'react'
-import MainLayout from '../layout/MainLayout'
 import Plot from 'react-plotly.js'
 
-function secondFloor() {
+function plotTest() {
   return (
-    <div>
-      <MainLayout>
-      <Plot
+    <Plot
         data={[
           {
             x: [1, 2, 3],
@@ -19,9 +16,7 @@ function secondFloor() {
         ]}
         layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
       />
-      </MainLayout>
-    </div>
   )
 }
 
-export default secondFloor
+export default plotTest
