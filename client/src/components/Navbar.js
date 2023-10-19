@@ -2,7 +2,7 @@ import '../styles/navbar.css'
 import React from 'react'
 import { Sidenav, Nav } from 'rsuite'
 import { Link } from 'react-router-dom'
-import 'rsuite/dist/rsuite.min.css';
+import 'rsuite/dist/rsuite-no-reset.min.css';
 
 function Navbar() {
     const NavLink = React.forwardRef(({ href, children, ...rest }, ref) => (
