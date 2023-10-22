@@ -3,12 +3,13 @@ const express = require('express')
 const app = express()
 const PORT = 8080
 const sql = require('mssql')
+require('dotenv').config();
 
 const config = {
-  user: 'your-username',
-  password: 'your-password',
-  server: 'sql-engr-cem-db.database.windows.net',
-  database: 'your-database-name',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  database: process.env.DB_DATABASE,
 };
 
 // Have Node serve the files for our built React app
@@ -22,8 +23,10 @@ app.get("/api", (req, res) => {
 app.get('/api/testData', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query('SELECT * FROM TestData');
+    const result = await pool.request().query("SELECT * FROM energy_data");
+    console.log(result.recordset); // add this line to print the test data to console
     res.send(result.recordset);
+
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
