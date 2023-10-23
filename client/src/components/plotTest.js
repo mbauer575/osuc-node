@@ -6,19 +6,10 @@ function plotTest() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('/api/testData')
+    fetch('/api/ResHall/last24Hours')
       .then((response) => response.json())
       .then((data) => {
-        const processedData = data.map((d) => {
-          const date = new Date(d.Date);
-          const time = new Date(d.Time);
-          const dateTime = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), time.getUTCHours(), time.getUTCMinutes(), time.getUTCSeconds());
-          return {
-            ...d,
-            DateTime: dateTime,
-          };
-        });
-        setData(processedData);
+        setData(data);
       });
   }, []);
 
@@ -26,7 +17,7 @@ function plotTest() {
     <Plot
       data={[
         {
-          x: data.map((d) => d.DateTime),
+          x: data.map((d) => d.dateTime),
           y: data.map((d) => d.First_Floor),
           type: 'scatter',
           mode: 'lines+markers',
