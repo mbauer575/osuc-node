@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Plot from 'react-plotly.js'
 
-function PlotTest() {
+function PlotTest({Floor_Name}) {
 
   const [data, setData] = useState([]);
 
@@ -18,7 +18,7 @@ function PlotTest() {
       data={[
         {
           x: data.map((d) => d.dateTime),
-          y: data.map((d) => d.First_Floor),
+          y: data.map((d) => d[Floor_Name]),
           type: 'scatter',
           mode: 'lines',
           marker: { color: 'red', size: 8 },
@@ -26,7 +26,7 @@ function PlotTest() {
       ]}
       layout={{
         autosize: true,
-        title: 'Server1 Meter1 Average Over Time',
+        title: '${Floor_Name} Energy Usage',
         xaxis: { title: 'Date and Time' },
         yaxis: { title: 'First Floor (watts)' },
         margin: { l: 50, r: 50, b: 50, t: 50, pad: 4 },

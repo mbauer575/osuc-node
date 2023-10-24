@@ -5,7 +5,8 @@ import PlotTest from '../components/PlotTest'
 function firstFloor() {
   return (
     <MainLayout>
-      <PlotTest />
+      <div>First Floor</div>
+      <PlotTest Floor_Name="First_Floor" />
     </MainLayout>
   )
 }
