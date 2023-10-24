@@ -41,7 +41,7 @@ app.get('/api/testData', async (req, res) => {
 });
 
 //gets the last 24 hours of Res Hall data
-app.get('/api/ResHall/last24Hours', async (req, res) => {
+app.get('/api/ResHall/lastday', async (req, res) => {
   try {
     const pool = await sql.connect(config);
     const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE dateTime >= DATEADD(day, -1, GETUTCDATE()) ORDER BY dateTime ASC`);
