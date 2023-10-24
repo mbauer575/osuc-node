@@ -1,6 +1,6 @@
 import React from 'react'
 import MainLayout from '../layout/MainLayout'
-import PlotTest from '../components/plotTest'
+import PlotTest from '../components/PlotTest'
 
 
 function secondFloor() {
