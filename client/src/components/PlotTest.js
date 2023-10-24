@@ -26,7 +26,7 @@ function PlotTest({Floor_Name}) {
       ]}
       layout={{
         autosize: true,
-        title: '${Floor_Name} Energy Usage',
+        title: 'Energy Usage',
         xaxis: { title: 'Date and Time' },
         yaxis: { title: 'First Floor (watts)' },
         margin: { l: 50, r: 50, b: 50, t: 50, pad: 4 },
