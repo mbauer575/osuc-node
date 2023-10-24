@@ -37,4 +37,4 @@ function PlotTest() {
   )
 }
 
-export default plotTest
+export default PlotTest
