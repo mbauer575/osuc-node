@@ -20,10 +20,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18.x'
-      -name: Install backend dependencies
-       run: npm install
-      - name: npm install and build front end
+      - name: Install backend dependencies
+        run: npm install
+      
+      - name: npm install and build front
         run: |
+          cd client
+          npm install
           npm run build
 
       - name: Zip artifact for deployment
