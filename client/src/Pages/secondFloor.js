@@ -8,7 +8,7 @@ function secondFloor() {
     <div>
       <MainLayout>
         <div>Second Floor</div>
-        <PlotTest Floor_Name="First_Floor"/>
+        <PlotTest Floor_Name="Second_Floor"/>
       </MainLayout>
     </div>
   )
