@@ -20,8 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18.x'
-
-      - name: npm install and build using ci
+      -name: Install backend dependencies
+       run: npm install
+      - name: npm install and build front end
         run: |
           npm run build
 
