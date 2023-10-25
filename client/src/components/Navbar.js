@@ -15,14 +15,12 @@ function Navbar() {
             <Sidenav defaultOpenKeys={['3']}>
                 <Sidenav.Body>
                     <Nav activeKey="1">
-                        <Nav.Item eventKey="1" as={NavLink} href="/">
-                            Home
-                        </Nav.Item>
+                        <Nav.Item className='navitem' eventKey="1" as={NavLink} href="/">Home</Nav.Item>
                         <Nav.Menu eventKey="3" title="Res Hall" >
-                            <Nav.Item eventKey="3-1" as={NavLink} href="/firstfloor">1st Floor</Nav.Item>
-                            <Nav.Item eventKey="3-2" as={NavLink} href="/secondfloor">2nd Floor</Nav.Item>
-                            <Nav.Item eventKey="3-3" as={NavLink} href="/thirdfloor">3rd Floor</Nav.Item>
-                            <Nav.Item eventKey="3-4" as={NavLink} href="/fourthfloor">4th Floor</Nav.Item>
+                            <Nav.Item className='navitem' eventKey="3-1" as={NavLink} href="/firstfloor">1st Floor</Nav.Item>
+                            <Nav.Item className='navitem' eventKey="3-2" as={NavLink} href="/secondfloor">2nd Floor</Nav.Item>
+                            <Nav.Item className='navitem' eventKey="3-3" as={NavLink} href="/thirdfloor">3rd Floor</Nav.Item>
+                            <Nav.Item className='navitem' eventKey="3-4" as={NavLink} href="/fourthfloor">4th Floor</Nav.Item>
                         </Nav.Menu>
                     </Nav>
                 </Sidenav.Body>

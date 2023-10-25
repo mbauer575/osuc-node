@@ -41,10 +41,10 @@ app.get('/api/testData', async (req, res) => {
 });
 
 //gets the last 24 hours of Res Hall data
-app.get('/api/ResHall/last24Hours', async (req, res) => {
+app.get('/api/ResHall/lastday', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE DateTime >= DATEADD(day, -1, GETUTCDATE())`);
+    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE dateTime >= DATEADD(day, -1, GETUTCDATE()) ORDER BY dateTime ASC`);
     res.send(result.recordset);
   } catch (err) {
     console.error(err);
@@ -56,7 +56,7 @@ app.get('/api/ResHall/last24Hours', async (req, res) => {
 app.get('/api/ResHall/lastWeek', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE DateTime >= DATEADD(week, -1, GETUTCDATE())`);
+    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE dateTime >= DATEADD(week, -1, GETUTCDATE()) ORDER BY dateTime ASC`);
     res.send(result.recordset);
   } catch (err) {
     console.error(err);
@@ -67,7 +67,7 @@ app.get('/api/ResHall/lastWeek', async (req, res) => {
 app.get('/api/ResHall/lastMonth', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE DateTime >= DATEADD(month, -1, GETUTCDATE())`);
+    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE dateTime >= DATEADD(month, -1, GETUTCDATE()) ORDER BY dateTime ASC`);
     res.send(result.recordset);
   } catch (err) {
     console.error(err);
@@ -78,7 +78,7 @@ app.get('/api/ResHall/lastMonth', async (req, res) => {
 app.get('/api/ResHall/lastYear', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE DateTime >= DATEADD(year, -1, GETUTCDATE())`);
+    const result = await pool.request().query(`SELECT * FROM ${tableName} WHERE dateTime >= DATEADD(year, -1, GETUTCDATE()) ORDER BY dateTime ASC`);
     res.send(result.recordset);
   } catch (err) {
     console.error(err);

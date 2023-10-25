@@ -8,10 +8,18 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Impact', sans-serif;
+    font-size: 40px;
+
 }
 
 img {
     display: block;
     height: 80px;
     margin: 10px;
+}
+
+.headerSpacer {
+    height: 40px;
+    background-color: black;
 }

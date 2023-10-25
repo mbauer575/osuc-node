@@ -1,12 +1,14 @@
 import React from 'react'
 import MainLayout from '../layout/MainLayout'
-import PlotTest from '../components/plotTest'
+import PlotTest from '../components/PlotTest'
 
 function firstFloor() {
   return (
     <MainLayout>
-      <PlotTest />
+      <div>First Floor</div>
+      <PlotTest Floor_Name="First_Floor" />
     </MainLayout>
-)}
+  )
+}
 
 export default firstFloor
