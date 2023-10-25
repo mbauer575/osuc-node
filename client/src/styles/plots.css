@@ -10,7 +10,15 @@
   margin-bottom: 10px;
   width: 100%;
 }
+.floorSelect {
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 
-.timeSelect label > * {
-  margin-right: 10px;
+}
+.floorSelect label > * {
+  margin: auto;
+  margin-right: 2px;
+  margin-left: 10px;
 }

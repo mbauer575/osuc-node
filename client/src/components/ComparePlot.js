@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-import { Toggle } from 'rsuite';
+import { Toggle, RadioGroup, Radio } from 'rsuite';
 import '../styles/plots.css';
 
-function ComparePlot() {
+
+function PlotTest() {
   const [data, setData] = useState([]);
   const [timeRange, setTimeRange] = useState('day');
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,6 @@ function ComparePlot() {
     Second_Floor: true,
     Third_Floor: true,
     Fourth_Floor: true,
-    Utilities: true,
   });
 
   useEffect(() => {
@@ -39,6 +39,10 @@ function ComparePlot() {
       });
   }, [timeRange]);
 
+  const handleTimeRangeChange = (value) => {
+    setTimeRange(value);
+  };
+
   const handleToggleChange = (floor) => {
     setSelectedData((prevState) => ({
       ...prevState,
@@ -54,22 +58,32 @@ function ComparePlot() {
     return <div>Error: {error.message}</div>;
   }
 
-  const COLORS = ['red', 'blue', 'green', 'purple', 'orange'];
-
   const selectedTrace = Object.entries(selectedData)
     .filter(([_, value]) => value)
-    .map(([key, _], index) => ({
+    .map(([key, _]) => ({
       x: data.map((d) => d.dateTime),
       y: data.map((d) => d[key]),
       type: 'scatter',
       mode: 'lines',
       name: key,
-      marker: { color: COLORS[index % COLORS.length], size: 8 },
+      marker: { color: 'red', size: 8 },
     }));
 
   return (
     <div>
       <div className='timeSelect'>
+      <RadioGroup
+          inline
+          value={timeRange}
+          onChange={handleTimeRangeChange}
+        >
+          <Radio value='day'>Day</Radio>
+          <Radio value='week'>Week</Radio>
+          <Radio value='month'>Month</Radio>
+          <Radio value='year'>Year</Radio>
+        </RadioGroup>
+      </div>
+      <div className='floorSelect'>
         <label>
           <Toggle
             checked={selectedData.First_Floor}
@@ -99,11 +113,11 @@ function ComparePlot() {
           Fourth Floor
         </label>
         <label>
-          <Toggle
-            checked={selectedData.Utilities}
-            onChange={() => handleToggleChange('Utilities')}
-          />
-          Utilities
+            <Toggle
+                checked={selectedData.Utilities}
+                onChange={() => handleToggleChange('Utilities')}
+            />
+            Utilities
         </label>
       </div>
       <Plot
@@ -122,4 +136,4 @@ function ComparePlot() {
   );
 }
 
-export default ComparePlot;
+export default PlotTest;
