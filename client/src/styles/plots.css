@@ -2,10 +2,15 @@
 
 .timeSelect {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 10px;
   width: 100%;
-  max-width: 500px;
+}
+
+.timeSelect label > * {
+  margin-right: 10px;
 }

@@ -6,7 +6,8 @@ import FirstFloor from './Pages/firstFloor';
 import SecondFloor from './Pages/secondFloor';
 import ThirdFloor from './Pages/thirdFloor';
 import FourthFloor from './Pages/fourthFloor';
-
+import ResUtil from './Pages/resUtil';
+import Compare from './Pages/compare';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/fourthfloor",
     element: <FourthFloor />,
+  },
+  {
+    path:"/ResUtil",
+    element: <ResUtil />,
+  },
+  {
+    path: "/compare",
+    element: <Compare />,
   },
 ]);
 
