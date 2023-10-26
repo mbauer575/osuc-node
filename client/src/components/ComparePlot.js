@@ -6,7 +6,7 @@ import '../styles/plots.css';
 
 function PlotTest() {
   const [data, setData] = useState([]);
-  const [timeRange, setTimeRange] = useState('day');
+  const [timeRange, setTimeRange] = useState('year');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedData, setSelectedData] = useState({
@@ -72,7 +72,7 @@ function PlotTest() {
   return (
     <div>
       <div className='timeSelect'>
-      <RadioGroup
+        <RadioGroup
           inline
           value={timeRange}
           onChange={handleTimeRangeChange}
@@ -113,11 +113,11 @@ function PlotTest() {
           Fourth Floor
         </label>
         <label>
-            <Toggle
-                checked={selectedData.Utilities}
-                onChange={() => handleToggleChange('Utilities')}
-            />
-            Utilities
+          <Toggle
+            checked={selectedData.Utilities}
+            onChange={() => handleToggleChange('Utilities')}
+          />
+          Utilities
         </label>
       </div>
       <Plot
