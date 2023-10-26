@@ -2,10 +2,23 @@
 
 .timeSelect {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 10px;
   width: 100%;
-  max-width: 500px;
+}
+.floorSelect {
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+}
+.floorSelect label > * {
+  margin: auto;
+  margin-right: 2px;
+  margin-left: 10px;
 }
